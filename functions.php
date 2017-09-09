@@ -165,40 +165,76 @@ function registerMenu() {
 };
 
 
-add_action('admin_menu', 'my_cool_plugin_create_menu');
+add_action('admin_menu', 'customSite');
 
-function my_cool_plugin_create_menu() {
+function customSite() {
 
 	add_menu_page(
 		'Custom Site', 
 		'Personalizar Site',
 		'read', 
 		__FILE__, 
-		'my_cool_plugin_settings_page');
+		'callBackAddMenu',
+		'',
+		9
+	);
 	
 	add_action( 'admin_init', 'register_my_cool_plugin_settings' );
 }
 
 
 function register_my_cool_plugin_settings() {
-	register_setting( 'my-cool-plugin-settings-group', 'header' );
-	register_setting( 'my-cool-plugin-settings-group', 'casal' );
-	register_setting( 'my-cool-plugin-settings-group', 'local' );
-	register_setting( 'my-cool-plugin-settings-group', 'time' );
-	register_setting( 'my-cool-plugin-settings-group', 'rsvp' );
-	register_setting( 'my-cool-plugin-settings-group', 'fotos' );
-	register_setting( 'my-cool-plugin-settings-group', 'recados' );
-	register_setting( 'my-cool-plugin-settings-group', 'blog' );
-	register_setting( 'my-cool-plugin-settings-group', 'color' );
+	register_setting( 'add_custom_options', 'header' );
+	register_setting( 'add_custom_options', 'casal' );
+	register_setting( 'add_custom_options', 'local' );
+	register_setting( 'add_custom_options', 'time' );
+	register_setting( 'add_custom_options', 'rsvp' );
+	register_setting( 'add_custom_options', 'fotos' );
+	register_setting( 'add_custom_options', 'recados' );
+	register_setting( 'add_custom_options', 'blog' );
+	register_setting( 'add_custom_options', 'color' );
 }
 
-function my_cool_plugin_settings_page() {
+
+add_action('admin_init', 'redirect_user_with_role_noivos');
+function redirect_user_with_role_noivos() {
+	$userRole = wp_get_current_user()->roles[0];
+	global $pagenow;
+	$redirect_pages = ['tools.php', 'options-general.php', 'edit.php?post_type=acf', 'duplicator', 'woocommerce-checkout-manager'];
+
+	if
+	($userRole === 'noivos'
+		AND (in_array($pagenow, $redirect_pages))
+			OR 
+				(
+					$_GET['post_type'] === 'acf' OR 
+					$_GET['page'] === 'duplicator-tools' OR
+					$_GET['page'] === 'woocommerce-checkout-manager'
+				)
+	) {
+		wp_redirect(home_url('wp-admin/index.php'));
+		exit;
+	}
+}
+
+add_action('admin_init', 'hide_menu_for_noivos');
+function hide_menu_for_noivos() {
+	$userRole = wp_get_current_user()->roles[0];
+	if($userRole === 'noivos') {
+		$removeMenu = ['tools.php', 'options-general.php', 'edit.php?post_type=acf', 'duplicator', 'woocommerce-checkout-manager'];
+		foreach($removeMenu as $menu) {
+			remove_menu_page($menu);
+		}
+	}
+}
+
+function callBackAddMenu() {
 ?>
 <div class="wrap">
 <h1>Customizar site</h1>
 <form method="post" action="options.php">
-    <?php settings_fields( 'my-cool-plugin-settings-group' ); ?>
-    <?php do_settings_sections( 'my-cool-plugin-settings-group' ); ?>
+    <?php settings_fields( 'add_custom_options' ); ?>
+	<?php do_settings_sections( 'add_custom_options' ); ?>
     <table class="form-table">
 		<tr valign="top">
 			<th scope="row">Cor do site</th>
@@ -216,22 +252,22 @@ function my_cool_plugin_settings_page() {
         	<td>
 				<label class="label-opts">
 					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/header1.jpg">
-					<input type="radio" name="header" <?php if(get_option('header') === '1') { echo 'checked'; } ?> value="1" />	
+					<input type="radio" id="header_1" name="header" <?php if(get_option('header') === '1') { echo 'checked'; } ?> value="1" />	
 				</label>
 
 				<label class="label-opts">
 					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/header2.jpg">
-					<input type="radio" name="header" <?php if(get_option('header') === '2') { echo 'checked'; } ?> value="2" />	
+					<input type="radio" id="header_2" name="header" <?php if(get_option('header') === '2') { echo 'checked'; } ?> value="2" />	
 				</label>
 
 				<label class="label-opts">
 					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/header3.jpg">
-					<input type="radio" name="header" <?php if(get_option('header') === '3') { echo 'checked'; } ?> value="3" />	
+					<input type="radio" id="header_3" name="header" <?php if(get_option('header') === '3') { echo 'checked'; } ?> value="3" />	
 				</label>
 
 				<label class="label-opts">
 					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/header4.jpg">
-					<input type="radio" name="header" <?php if(get_option('header') === '4') { echo 'checked'; } ?> value="4" />	
+					<input type="radio" id="header_4" name="header" <?php if(get_option('header') === '4') { echo 'checked'; } ?> value="4" />	
 				</label>
 			</td>
 		</tr>
@@ -761,7 +797,9 @@ function my_custom_fonts() {
 			.post-type-page .page-title-action,
 			#pageparentdiv,
 			.post-type-page #postimagediv,
-			#post-body-content .inside  { 
+			#post-body-content .inside,
+			.user-language-wrap,
+			#dashboard_primary  { 
 				display: none;
 			}
 
