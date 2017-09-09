@@ -1,0 +1,67 @@
+.footer {
+	background: #3e3e3e;
+	&-item {
+		margin-bottom: 20px;
+		a {
+			padding: 5px 0;
+			display: block;
+			left: 0;
+			position: relative;
+			transition: all 0.2s ease;
+		}
+		span, h2 {
+			color: #fff;
+			font-size: 20px;
+			font-weight: 400;
+			margin-bottom: 5px; 
+		}
+	} 
+	nav {
+		li {
+			// display: inline-block;
+			// margin-right: 10px;
+			// padding-right: 10px;
+			// border-right: 2px solid #ccc;
+			&:last-child {
+				// border-right: 0;
+			}
+		}
+	}
+	p {
+		color: #c7c7c7;
+	}
+	.footer-local {
+		margin-bottom: 14px;
+		h3 {
+			color: #fff;
+			font-weight: lighter;
+			text-transform: capitalize;
+		}
+		p {
+			margin-bottom: 0;
+		}
+	}
+}
+
+iframe {
+	pointer-events: none;
+}
+
+.credits {
+	padding: 25px 0;
+	background: #333;
+	color: #fff;
+}
+
+.acf-map {
+	width: 100%;
+	height: 400px;
+	display: block;
+	pointer-events: none;
+	position: relative; /* IE needs a position other than static */
+}
+
+/* fixes potential theme css conflict */
+.acf-map img {
+   max-width: inherit !important;
+}

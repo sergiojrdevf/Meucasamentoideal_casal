@@ -1,0 +1,20 @@
+{
+  "name": "theme_base_wordpress",
+  "version": "1.0.0",
+  "description": "WordPress theme base with Gulp + Stylus + jQuery + Font Awesome + Menu Hamburger CSS + Lightbox",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "https://github.com/SergioJrDev",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-minify": "0.0.15",
+    "gulp-stylus": "^2.6.0"
+  },
+  "dependencies": {
+    "gulp-install": "^1.1.0"
+  }
+}

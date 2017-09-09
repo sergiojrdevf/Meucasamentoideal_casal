@@ -1,0 +1,36 @@
+.table {
+	width: 100%; 
+    border-collapse: separate;
+    border-spacing: 2px 0px;
+    overflow: scroll;
+    width: 100%;
+    display: block;
+    @media screen and (min-width: 500px) {
+    	& {
+    		display: table;
+    	}
+    }
+	thead {
+		tr {
+			background: #6b6b6b;
+			th {
+				color: #fff;
+				padding: 10px 0;
+			}
+		}
+	}
+	&-stripped {
+		tr:nth-child(2n+2) {
+			background: #ececec;
+		}
+	}
+	&-bordered {
+		border: 1px solid #ccc;
+	}
+	.fa-check {
+		color: var(--color_theme);
+	}
+	.fa-times {
+		color: #ff7575;
+	}
+}

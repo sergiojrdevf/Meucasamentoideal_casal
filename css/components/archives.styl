@@ -1,0 +1,56 @@
+.archive {
+	.gallery-group {
+	    padding: 15px;
+	    box-shadow: 1px 1px 4px #cdcdcd, 0px 0px 4px #cdcdcd;
+	    margin-top: 2px;
+	    border-radius: 1px;
+	    margin-bottom: 30px;
+		.gallery-item {
+			margin-bottom: 10px; 
+		}
+		p {
+			margin-bottom: 0;
+			font-weight: normal;
+	    	text-transform: uppercase;
+		}
+	}
+	@media (min-width: sm) {
+		.archive-single {
+			.gallery-item {
+				height: 150px;
+			}
+		}
+	}
+	&-recados {
+		.notes-item {
+			padding: 0;
+			margin-bottom: 20px;
+			border-bottom: 1px solid #e1e1e1;
+			padding-bottom: 20px;
+		}
+	}
+}
+
+i.fa.fa-expand {
+    float: right;
+    padding-right: 7px;
+    padding-top: 5px;
+    color: #fff;
+}
+
+.pagination {
+	margin: 30px 0;
+}
+
+.pagination a.page-numbers {
+    color: #7c7c7c;
+    padding: 3px 7px;
+    border: 1px solid;
+}
+
+.pagination .page-numbers.current {
+    background: #6c6c6c;
+    padding: 3px 7px;
+    color: #fff;
+    border: 1px solid #6c6c6c;
+}

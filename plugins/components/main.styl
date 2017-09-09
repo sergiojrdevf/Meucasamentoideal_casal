@@ -1,0 +1,38 @@
+
+.style_font {
+	font-family: 'Petit Formal Script', cursive;
+	color: #fff;
+}
+
+.sans-serif {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: lighter;
+}
+
+.section-title {
+	margin-bottom: 40px;
+	font-size: 3rem;
+}
+
+.space-title {
+	margin: 20px 0;
+}
+
+
+.max-width-content {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+
+.overlay {
+	position: relative;
+	&:after {
+		pseudoElemnt(absolute, 100%, 100%);
+		background: rgba(27, 27, 27, 0.46);
+	}
+	& > * {
+		z-index: 99;
+		position: relative;
+	}
+}

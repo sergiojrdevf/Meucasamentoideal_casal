@@ -1,0 +1,108 @@
+.local {
+	/*bg-image(cover, bottom, '../../img/local.jpg');*/
+	&-item {
+		padding: 20px;
+	}
+	h2 {
+		font-weight: lighter;
+		margin-bottom: 20px;
+	}
+	&-item {
+		margin-bottom: 20px;
+		h2 {
+			font-size: 38px;
+			color: #333;
+			font-weight: bold;
+		}
+	}
+	.local-details {
+		margin-bottom: 10px;
+		p {
+			margin-bottom: 0;
+		}
+	}
+
+	.max_width {
+		max-width: 300px;
+		margin: auto; 
+	}
+	&.title-middle {
+		bg-image(cover, bottom, '../../img/hug.jpg');
+		h2,
+		p {
+			color: #fff;
+		}
+		.title-event {
+			font-weight: lighter;
+		}
+		.bordered {
+			border-radius: 3px;
+			border-width: 2px;
+		}
+	}
+	&.with-img {
+		background: #ececec;
+		.local-item {
+			padding: 0;
+			background: #fff;
+			img {
+				display: none;
+			}
+			h2 {
+			    font-size: 24px;
+			    padding-bottom: 10px;
+			    margin-bottom: 10px;
+			}
+			.local-featured {
+				font-weight: normal;
+				margin-bottom: 0;
+			}
+		}
+		.local-content {
+			padding: 20px;
+		}
+	}
+	&.with-map {
+		iframe {
+			width: 100%;
+		}
+		.local-item {
+			margin-bottom: 20px;
+		}
+	}
+	&.with-title {
+		.local-item {
+			h2 {
+			    font-family: 'Ubuntu',sans-serif;
+			    font-size: 30px;
+			    font-weight: lighter;
+			    margin-bottom: 10px;
+			}
+			p {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.bordered {
+	border: 1px solid #dadada;
+}
+
+iframe {
+	width: 100%;
+}
+
+.border-right {
+	border-right: 1px solid #e1e1e1;
+}
+
+.bg-cover {
+	height: 200px;
+	background-position: center;
+	background-size: cover;
+}
+
+.justify-center {
+	justify-content: center;
+}

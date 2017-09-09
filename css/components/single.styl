@@ -1,0 +1,200 @@
+.single {
+	&-content {	
+		background: #fff;
+		padding: 15px;
+		margin-bottom: 15px;
+	}
+	&-title {
+		color: #333;
+		font-size: 30px;
+		line-height: 1;
+		margin: 10px 0;
+	}
+	h3 {
+		color: #616161;
+		text-transform: uppercase;
+	}
+	&-content-post {
+		.date-post {
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.date-post {
+    font-size: 10px;
+    color: #8a8a8a;
+    display: block;
+    text-transform: uppercase;
+}
+
+.service-box {
+	margin-bottom: 15px;
+    border-bottom: 1px solid #d9d9d9;
+	ul {
+		margin-bottom: 15px;
+	}
+	li {
+		/*bg-image(cover, right, '../../img/champagne-person-friend.jpg');*/
+		/*display: inline-block;*/
+		/*padding: 15px;*/
+		/*margin-bottom: 15px;*/
+		/*margin-right: 15px;*/
+
+		p {
+			margin-bottom: 0;
+			background: #fff;
+			/*padding: 15px;*/
+		}
+	}
+	@media (min-width: sm) {
+		ul {
+			column-count: 2;
+		}
+		.gallery-item {
+			height: 150px;
+		}
+		.gallery .sm-6-12.md-4-12:nth-child(4) .gallery-item,
+		.gallery .sm-6-12.md-4-12:nth-child(5) .gallery-item,
+		.gallery .sm-6-12.md-4-12:nth-child(6) .gallery-item {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.sidebar {
+	.products .product-item {
+		.product-image {
+			height: 100px;
+			margin-bottom: 0;
+		}
+		.product-name {
+			font-size: 16px;
+			margin-bottom: 0;
+			font-weight: 500;
+		}
+	}
+
+	&-title {
+		h2 {
+			margin-bottom: 10px;
+			color: var(--color_theme);
+			font-weight: lighter;
+			margin-bottom: 5px;
+		}
+	}
+	&-item {
+		margin-bottom: 15px;
+		.blog-item {
+			display: flex;
+			padding-bottom: 15px;
+			border-bottom: 1px solid #efefef;
+			margin-bottom: 15px;
+			h2 {
+				margin: 0;
+				font-size: 20px;
+    			line-height: 1;
+    			font-weight: 400;
+			}
+			a {
+				line-height: 1;
+				font-size: 14px;
+			}
+		}
+		.sm-6-12.md-12-12:last-child {
+			.blog-item {	
+				padding-bottom: 0;
+				margin-bottom: 0;
+				border-bottom: 0;
+			}
+		}
+		.blog-img {
+			width: 100px;
+			height: 80px;
+			background-size: cover;
+			background-position: center;
+		}
+		.blog-content {
+			width: calc(100% - 100px);
+   			display: flex;
+		    flex-direction: column;
+		    justify-content: space-between;
+		    padding: 0 15px 0px 15px;
+		}
+		span {
+		    font-size: 10px;
+		    color: #8a8a8a;
+		    display: block;
+		    text-transform: uppercase;
+		}
+		&.line-icon {
+			padding-bottom: 30px;
+			border-bottom: 1px solid var(--color_theme_white);
+			position: relative;
+			&:after {
+			   content: '\f004';
+			   font-family: FontAwesome;
+			   font-weight: normal;
+			   font-style: normal;
+				display: block;
+				position: absolute;
+				bottom: -9px;
+				left: 0;
+				right: 0;
+				margin: auto;
+				width: 20px;
+				color: var(--color_theme);
+			}
+			&:last-child {
+				border-bottom: 0;
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+	&-title-line {
+		position: relative;
+		&:after {
+		    content: '';
+		    height: 1px;
+		    width: 100%;
+		    background: #cacaca;
+		    display: block;
+		    position: absolute;
+		    top: 22px;
+		}
+		h2 {
+		    background: #fff;
+		    display: inline-block;
+		    margin-bottom: 15px;
+		    z-index: 1;
+		    position: relative;
+		    padding: 0 10px;
+		}
+
+	}
+
+	.orcamento {
+		bg-image(cover, center, '../../img/orcamento.jpg');
+	    display: flex;
+	    align-items: center;
+	    justify-content: space-around; 
+	    height: 300px;
+	    .holder {
+		    width: 100%;
+		    height: 100%;
+		    border: 2px solid #fff; 
+		    text-align: center; 
+		    /* line-height: 200px; */
+		    align-items: center;
+		    display: flex;
+		    justify-content: space-around;
+		    a {
+			    background: #fff;
+			    color: #333;
+			    padding: 10px;
+		    }
+	    }
+	}
+}

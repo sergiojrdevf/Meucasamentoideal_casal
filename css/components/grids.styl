@@ -1,0 +1,40 @@
+.column {
+	xs-grid(12);
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -15px;
+	> div {
+		width: 100%;
+		padding: 0 15px;
+	}
+}
+
+.no-pad {
+	padding: 0 !important;
+	margin: 0;
+}
+
+@media screen and (min-width: sm) {
+	.column {
+		sm-grid(12);
+	}
+
+	.column-b {
+		display: flex;
+	    flex-wrap: wrap;
+		margin: 0 -15px;
+	}
+
+}
+
+@media screen and (min-width: md) {
+	.column {
+		md-grid(12);
+	}
+}
+
+@media screen and (min-width: lg) {
+	.column {
+		lg-grid(12);
+	}
+}
