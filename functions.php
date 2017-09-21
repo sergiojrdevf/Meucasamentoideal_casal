@@ -132,8 +132,14 @@ $styles = [
 	],
 ];
 
+	if(!is_home()) {
+		unset($scripts['GoogleMaps']);
+		unset($scripts['owlCarousel']);
+		unset($styles['OwlCarouselCss']);
+		unset($styles['OwlCarouselTheme']);
+	}
 
-	if($scripts) {
+	if($scripts) {	
 		foreach($scripts as $key => $script) {
 			echo wp_enqueue_script($key, $script['dir'], $script['depends'],  $script['version'],$script['in_footer']);
 		}
