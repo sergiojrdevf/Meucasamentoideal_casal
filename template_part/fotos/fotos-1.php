@@ -17,11 +17,12 @@
 					wp_reset_postdata();
 					$merged = array_merge(... $fotos);
 					foreach (array_slice($merged, 0, 6) as $foto) { ?>
+						<?php  ?>
 						<div class="sm-6-12 md-4-12">
-							<a data-fancybox="gallery" href="<?php echo $foto['url']; ?>">
-								<div class="gallery-item" style="background-image: url('<?php echo $foto['url'] ?>')">
+							<a data-fancybox="gallery" href="<?php echo $foto['sizes']['lightbox']; ?>">
+								<div class="gallery-item" style="background-image: url('<?php echo $foto['sizes']['small']; ?>')">
 									<i class="fa fa-expand" aria-hidden="true"></i>
-									<img src="<?php echo $foto['url'] ?>" alt="<?php echo $foto['caption'] ?>">
+									<img src="<?php echo $foto['sizes']['lightbox'] ?>" alt="<?php echo $foto['caption'] ?>">
 								</div>
 							</a>
 						</div>

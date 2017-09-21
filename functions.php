@@ -23,6 +23,13 @@ function dequeue_jquery_migrate( &$scripts){
 	}
 }
 
+add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
+function wpdocs_theme_setup() {
+    add_image_size( 'category-thumb', 300 ); // 300 pixels wide (and unlimited height)
+	add_image_size( 'small', 420 ); // (cropped)
+	add_image_size( 'lightbox', 820 ); // (cropped)
+}
+
 // Add Thumbnails
 add_theme_support('post-thumbnails');
 
@@ -62,12 +69,6 @@ $scripts = [
  	],
 	'GoogleMaps' => [
 		'dir' =>  'https://maps.googleapis.com/maps/api/js?key=AIzaSyCKpUca5aQjo6Jx4hH0zji7GTKjU5plz2w',
-		'depends' => array('jQuery'),
-		'version' => '1.0',
-		'in_footer' => true,
- 	],
-	'formvalidation' => [
-		'dir' =>  get_template_directory_uri().'/plugins/jquery-validation/jquery.validate.min.js',
 		'depends' => array('jQuery'),
 		'version' => '1.0',
 		'in_footer' => true,
@@ -251,23 +252,23 @@ function callBackAddMenu() {
 			<th scope="row">Header</th>
         	<td>
 				<label class="label-opts">
+					<input type="radio" name="header" <?php if(get_option('header') === '1') { echo 'checked'; } ?> value="1" />	
 					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/header1.jpg">
-					<input type="radio" id="header_1" name="header" <?php if(get_option('header') === '1') { echo 'checked'; } ?> value="1" />	
 				</label>
 
 				<label class="label-opts">
+					<input type="radio" name="header" <?php if(get_option('header') === '2') { echo 'checked'; } ?> value="2" />	
 					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/header2.jpg">
-					<input type="radio" id="header_2" name="header" <?php if(get_option('header') === '2') { echo 'checked'; } ?> value="2" />	
 				</label>
 
 				<label class="label-opts">
+					<input type="radio" name="header" <?php if(get_option('header') === '3') { echo 'checked'; } ?> value="3" />	
 					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/header3.jpg">
-					<input type="radio" id="header_3" name="header" <?php if(get_option('header') === '3') { echo 'checked'; } ?> value="3" />	
 				</label>
 
 				<label class="label-opts">
+					<input type="radio" name="header" <?php if(get_option('header') === '4') { echo 'checked'; } ?> value="4" />	
 					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/header4.jpg">
-					<input type="radio" id="header_4" name="header" <?php if(get_option('header') === '4') { echo 'checked'; } ?> value="4" />	
 				</label>
 			</td>
 		</tr>
@@ -276,28 +277,28 @@ function callBackAddMenu() {
         	<td>
 
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/noivos1.jpg">
 					<input type="radio" name="casal" <?php if(get_option('casal') === '1') { echo 'checked'; } ?> value="1" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/noivos1.jpg">
 				</label>
 
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/noivos2.jpg">
 					<input type="radio" name="casal" <?php if(get_option('casal') === '2') { echo 'checked'; } ?> value="2" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/noivos2.jpg">
 				</label>
 
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/noivos3.jpg">
 					<input type="radio" name="casal" <?php if(get_option('casal') === '3') { echo 'checked'; } ?> value="3" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/noivos3.jpg">
 				</label>
 
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/noivos4.jpg">
 					<input type="radio" name="casal" <?php if(get_option('casal') === '4') { echo 'checked'; } ?> value="4" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/noivos4.jpg">
 				</label>
 
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/noivos5.jpg">
 					<input type="radio" name="casal" <?php if(get_option('casal') === '5') { echo 'checked'; } ?> value="5" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/noivos5.jpg">
 				</label>	
 			</td>
 		</tr>
@@ -306,18 +307,18 @@ function callBackAddMenu() {
         	<td>
 
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/eventos1.jpg">
 					<input type="radio" name="local" <?php if(get_option('local') === '1') { echo 'checked'; } ?> value="1" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/eventos1.jpg">
 				</label>
 
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/eventos2.jpg">
 					<input type="radio" name="local" <?php if(get_option('local') === '2') { echo 'checked'; } ?> value="2" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/eventos2.jpg">
 				</label>
 
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/eventos3.jpg">
 					<input type="radio" name="local" <?php if(get_option('local') === '3') { echo 'checked'; } ?> value="3" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/eventos3.jpg">
 				</label>
 			</td>
 		</tr>
@@ -326,33 +327,33 @@ function callBackAddMenu() {
         	<td>
 
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/contagem1.jpg">
 					<input type="radio" name="time" <?php if(get_option('time') === '1') { echo 'checked'; } ?> value="1" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/contagem1.jpg">
 				</label>
 
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/contagem2.jpg">
 					<input type="radio" name="time" <?php if(get_option('time') === '2') { echo 'checked'; } ?> value="2" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/contagem2.jpg">
 				</label>
 
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/contagem3.jpg">
 					<input type="radio" name="time" <?php if(get_option('time') === '3') { echo 'checked'; } ?> value="3" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/contagem3.jpg">
 				</label>
 
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/contagem4.jpg">
 					<input type="radio" name="time" <?php if(get_option('time') === '4') { echo 'checked'; } ?> value="4" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/contagem4.jpg">
 				</label>
 
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/contagem5.jpg">
 					<input type="radio" name="time" <?php if(get_option('time') === '5') { echo 'checked'; } ?> value="5" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/contagem5.jpg">
 				</label>
 
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/contagem6.jpg">
 					<input type="radio" name="time" <?php if(get_option('time') === '6') { echo 'checked'; } ?> value="6" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/contagem6.jpg">
 				</label>
 	
 			</td>
@@ -361,18 +362,18 @@ function callBackAddMenu() {
 			<th scope="row">RSVP</th>
         	<td>
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/rsvp1.jpg">
 					<input type="radio" name="rsvp" <?php if(get_option('rsvp') === '1') { echo 'checked'; } ?> value="1" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/rsvp1.jpg">
 				</label>
 
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/rsvp2.jpg">
 					<input type="radio" name="rsvp" <?php if(get_option('rsvp') === '2') { echo 'checked'; } ?> value="2" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/rsvp2.jpg">
 				</label>
 
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/rsvp3.jpg">
 					<input type="radio" name="rsvp" <?php if(get_option('rsvp') === '3') { echo 'checked'; } ?> value="3" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/rsvp3.jpg">
 				</label>
 			</td>
 		</tr>
@@ -380,23 +381,23 @@ function callBackAddMenu() {
         	<th scope="row">Fotos</th>
         	<td>
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/fotos1.jpg">
 					<input type="radio" name="fotos" <?php if(get_option('fotos') === '1') { echo 'checked'; } ?> value="1" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/fotos1.jpg">
 				</label>
 
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/fotos2.jpg">
 					<input type="radio" name="fotos" <?php if(get_option('fotos') === '2') { echo 'checked'; } ?> value="2" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/fotos2.jpg">
 				</label>
 
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/fotos3.jpg">
 					<input type="radio" name="fotos" <?php if(get_option('fotos') === '3') { echo 'checked'; } ?> value="3" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/fotos3.jpg">
 				</label>
 
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/fotos4.jpg">
 					<input type="radio" name="fotos" <?php if(get_option('fotos') === '4') { echo 'checked'; } ?> value="4" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/fotos4.jpg">
 				</label>	
 			</td>
 		</tr>
@@ -404,23 +405,23 @@ function callBackAddMenu() {
         	<th scope="row">Recados</th>
         	<td>
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/recados1.jpg">
 					<input type="radio" name="recados" <?php if(get_option('recados') === '1') { echo 'checked'; } ?> value="1" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/recados1.jpg">
 				</label>
 
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/recados2.jpg">
 					<input type="radio" name="recados" <?php if(get_option('recados') === '2') { echo 'checked'; } ?> value="2" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/recados2.jpg">
 				</label>
 
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/recados3.jpg">
 					<input type="radio" name="recados" <?php if(get_option('recados') === '3') { echo 'checked'; } ?> value="3" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/recados3.jpg">
 				</label>
 
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/recados4.jpg">
 					<input type="radio" name="recados" <?php if(get_option('recados') === '4') { echo 'checked'; } ?> value="4" />	
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/recados4.jpg">
 				</label>
 			</td>
 		</tr>
@@ -428,18 +429,18 @@ function callBackAddMenu() {
         	<th scope="row">Blog</th>
         	<td>
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/blog1.jpg">
 					<input type="radio" name="blog" <?php if(get_option('blog') === '1') { echo 'checked'; } ?> value="1" />
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/blog1.jpg">
 				</label>
 
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/blog2.jpg">
 					<input type="radio" name="blog" <?php if(get_option('blog') === '2') { echo 'checked'; } ?> value="2" />
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/blog2.jpg">
 				</label>
 
 				<label class="label-opts">
-					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/blog3.jpg">
 					<input type="radio" name="blog" <?php if(get_option('blog') === '3') { echo 'checked'; } ?> value="3" />
+					<img class="" src="<?php echo get_template_directory_uri(); ?>/img/mobile/blog3.jpg">
 				</label>
 			</td>
         </tr>
@@ -645,38 +646,38 @@ function remove_admin_bar() {
 // var_dump(get_user_meta( get_current_user_id(), 'upload_count', true ));
 // exit;
 // Limit upload
-add_filter( 'wp_handle_upload', 'wpse47580_update_upload_stats' );
-function wpse47580_update_upload_stats( $args ) {
-    $size = filesize( $args['file'] );
+// add_filter( 'wp_handle_upload', 'wpse47580_update_upload_stats' );
+// function wpse47580_update_upload_stats( $args ) {
+//     $size = filesize( $args['file'] );
 
-    $user_id = get_current_user_id();
+//     $user_id = get_current_user_id();
 
-    $upload_count = get_user_meta( $user_id, 'upload_count', true );
-    $upload_bytes = get_user_meta( $user_id, 'upload_bytes', true );
+//     $upload_count = get_user_meta( $user_id, 'upload_count', true );
+//     $upload_bytes = get_user_meta( $user_id, 'upload_bytes', true );
 
-    update_user_meta( $user_id, 'upload_count', $upload_count + 1 );
-    update_user_meta( $user_id, 'upload_bytes', $upload_bytes + $size );
-}
+//     update_user_meta( $user_id, 'upload_count', $upload_count + 1 );
+//     update_user_meta( $user_id, 'upload_bytes', $upload_bytes + $size );
+// }
 
-# This function runs before the file is uploaded.
-add_filter( 'wp_handle_upload_prefilter', 'wpse47580_check_upload_limits' );
-function wpse47580_check_upload_limits( $file ) {
-    $user_id = get_current_user_id();
+// # This function runs before the file is uploaded.
+// add_filter( 'wp_handle_upload_prefilter', 'wpse47580_check_upload_limits' );
+// function wpse47580_check_upload_limits( $file ) {
+//     $user_id = get_current_user_id();
 
-    $upload_count = get_user_meta( $user_id, 'upload_count', true );
-    $upload_bytes = get_user_meta( $user_id, 'upload_bytes', true );
+//     $upload_count = get_user_meta( $user_id, 'upload_count', true );
+//     $upload_bytes = get_user_meta( $user_id, 'upload_bytes', true );
 
-    $filesize = $file['size']; // bytes
+//     $filesize = $file['size']; // bytes
 
-    $upload_bytes_limit_reached = ( ( $filesize + $upload_bytes ) > ( 1024 * 1024 * 10 ) );
-	echo '<script>console.log('.$upload_bytes_limit_reached.')</script>';
-    $upload_count_limit_reached = ( $upload_count + 1 ) > 10;
+//     $upload_bytes_limit_reached = ( ( $filesize + $upload_bytes ) > ( 1024 * 1024 * 10 ) );
+// 	echo '<script>console.log('.$upload_bytes_limit_reached.')</script>';
+//     $upload_count_limit_reached = ( $upload_count + 1 ) > 10;
 
-    if ( $upload_count_limit_reached || $upload_bytes_limit_reached )
-        $file['error'] = 'Upload limit has been reached for this account!';
+//     if ( $upload_count_limit_reached || $upload_bytes_limit_reached )
+//         $file['error'] = 'Upload limit has been reached for this account!';
 
-    return $file;
-}
+//     return $file;
+// }
 
 
 // WooCommerce
@@ -808,19 +809,22 @@ function my_custom_fonts() {
 			}
 
 			.label-opts {
-				border: 2px solid #333;
 				padding: 20px;
 				width: 30%;
-				/* height: 200px; */
-				/* display: block; */
-				/* float: left; */
 				display: inline-block;
 				margin-bottom: 20px;
+				text-align: center;
 			}
 
 			.label-opts img {
 				width: 100%;
 				height: 100%;
+				padding: 10px;
+				margin: 10px;
+			}
+			
+			.label-opts input[type=radio]:checked + img {
+				border: 2px solid #c0c0c0;
 			}
 	</style>
 <?php } }

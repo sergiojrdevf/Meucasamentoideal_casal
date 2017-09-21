@@ -16,64 +16,6 @@ $(document).ready(function(){
 		$('.modal').addClass('active');
 	});
 
-	$('#create-login').validate({
-	  rules: {
-	    user_name: {
-	    	required: true
-		},
-	    user_email: {
-	      required: true,
-	      email: true
-	    },
-		user_pass: {
-			required: true,
-			minlength: 6
-		},
-		user_repass: {
-			required: true,
-			minlength: 6,
-			equalTo: "#user_pass"
-		},
-	  },
-	  messages: {
-	    user_name: "Digite seu nome.",
-	    user_email: {
-	      required: "Digite seu e-mail.",
-	      email: "Digite um e-mail válido."
-	    },
-	    user_pass: {
-			required: 'Digite sua senha',
-			minlength: 'Digite uma senha com no mínimo 6 caracteres.'
-	    },
-	    user_repass: {
-	    	required: 'Digite sua senha',
-	    	minlength: 'Digite uma senha com no mínimo 6 caracteres.',
-			equalTo: 'Por favor, confirma sua senha.'
-	    }
-	  }
-	});
-
- 	function setRadio() {
- 		setTimeout(function() {
- 			$('.owl-item.active').find($('input:radio')).prop('checked', true);
- 		}, 100);
- 	}
-
- 	setRadio();
-
- 	$(".owl-carousel").on('changed.owl.carousel', function() {
- 		setRadio();
- 	});
-
- 	$('.change-dashboard').click(function(e){
- 		$('.change-dashboard').removeClass('active');
- 		$('.dashboard-view').removeClass('active');
- 		$(this).addClass('active');
- 		$('.dashboard').find("[data-show='" + $(this).data().menu + "']").addClass('active');
- 		e.preventDefault();
- 	}); 
-
-
 	$('.btn-close').click(function(e) {
 		$('.modal').removeClass('active');
 		e.preventDefault();
@@ -83,43 +25,6 @@ $(document).ready(function(){
 		$('.modal').addClass('active');
 		e.preventDefault();
 	});
-});
-
-$(window).on('load', function() {
- 	$(".slidersingle").owlCarousel({
-	    autoHeight: true,
-	    items:1,
-	    nav: true,
-	    navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>', '<i class="fa fa-chevron-right" aria-hidden="true"></i>']
- 	});
-  
- 	$(".slidertestimonial").owlCarousel({
-	    autoHeight: true,
-		responsive : {
-		    0 : {
-		        items:1,
-		    },
-		    768 : {
-		       items:2, 
-		    }
-		},
-	    loop:true,
-	    nav: false,
-		autoplay:true,
-		autoplayTimeout:3000,
-		autoplayHoverPause:false, 
-	    // nav: true,
-	    // navText: ['<i class="fa fa-chevron-left" aria-hidden="true"></i>', '<i class="fa fa-chevron-right" aria-hidden="true"></i>']
- 	});
-
- 	$("#sliderhome").owlCarousel({
-	    items:1,
-	    loop:true,
-	    nav: false,
-		autoplay:true,
-		autoplayTimeout:3000,
-		autoplayHoverPause:false, 
- 	});
 });
 
 
