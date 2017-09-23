@@ -39,7 +39,7 @@ $img = get_field('background', $page_id);
 	<meta property="og:image" content="<?php if(is_single()) { 
 					echo the_post_thumbnail_url();
 				} else  {
-					echo $page_id;
+					echo $img;
 				} ?>" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:description" content="<?php echo is_home() ? bloginfo( 'description' ) : wp_trim_words($postParent->post_content, 50, null); ?>"/>
@@ -53,6 +53,6 @@ $img = get_field('background', $page_id);
 	<meta name="twitter:image" content="<?php if(is_single()) {
 					echo the_post_thumbnail_url();
 				} else  {
-					echo $page_id;
+					echo $img;
 				} ?>" />
 <?php } 
