@@ -802,6 +802,11 @@ function remove_metaboxes() {
 }
 add_action( 'add_meta_boxes' , 'remove_metaboxes', 50 );
 
+function ryanbenhase_unregister_tags() {
+    unregister_taxonomy_for_object_type( 'category', 'post' );
+}
+add_action( 'init', 'ryanbenhase_unregister_tags' );
+
 add_action('admin_head', 'my_custom_fonts');
 
 function my_custom_fonts() {
@@ -820,7 +825,9 @@ function my_custom_fonts() {
 			.post-type-page #postimagediv,
 			#post-body-content .inside,
 			.user-language-wrap,
-			#dashboard_primary  { 
+			#dashboard_primary,
+			#menu-posts-rsvp .wp-first-item + li,
+			#menu-pages .wp-first-item + li { 
 				display: none;
 			}
 
