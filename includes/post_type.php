@@ -36,7 +36,6 @@ function register_posttype($options) {
 		'description'           => __( 'Eventos Descrição', 'text_domain' ),
 		'labels'                => $labels,
 		'supports'              => $options['support'],
-		'taxonomies'            => $options['cat'] === false ?  [] : array( 'category' ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,

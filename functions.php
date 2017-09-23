@@ -25,9 +25,9 @@ function dequeue_jquery_migrate( &$scripts){
 
 add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
 function wpdocs_theme_setup() {
-    add_image_size( 'category-thumb', 300 ); // 300 pixels wide (and unlimited height)
-	add_image_size( 'small', 420 ); // (cropped)
-	add_image_size( 'lightbox', 820 ); // (cropped)
+    add_image_size( 'category-thumb', 300 ); 
+	add_image_size( 'small', 420 );
+	add_image_size( 'lightbox', 820 );
 }
 
 // Add Thumbnails
@@ -226,7 +226,7 @@ function redirect_user_with_role_noivos() {
 	if
 	($userRole === 'noivos'
 		AND (in_array($pagenow, $redirect_pages))
-			OR 
+			OR $userRole === 'noivos' AND
 				(
 					$_GET['post_type'] === 'acf' OR 
 					$_GET['page'] === 'duplicator-tools' OR
@@ -827,7 +827,8 @@ function my_custom_fonts() {
 			.user-language-wrap,
 			#dashboard_primary,
 			#menu-posts-rsvp .wp-first-item + li,
-			#menu-pages .wp-first-item + li { 
+			#menu-pages .wp-first-item + li,
+			#toplevel_page_woocommerce { 
 				display: none;
 			}
 

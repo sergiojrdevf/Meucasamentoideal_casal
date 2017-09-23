@@ -25,13 +25,13 @@
 			</div>
 		</div>
 		<div class="sm-6-12  ">
-			<div class="couple-item">
+			<div class="couple-item p-div">
 				<h2>Nossa História</h2>
-				<?php echo $historia ?>
+				<?php echo '<p>'.$historia.'</p>'; ?>
 			</div>
 		</div>
 		<div class="sm-6-12  ">
-			<div class="couple-item">
+			<div class="couple-item p-div">
 				<h2>O pedido</h2>
 				<?php echo $pedido ?>
 			</div>

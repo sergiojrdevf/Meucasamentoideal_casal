@@ -23,10 +23,10 @@
 					wp_reset_postdata();
 					$merged = array_merge(... $fotos);
 					foreach (array_slice($merged, 0, 5) as $foto) { ?>
-						<div class="gallery-item" style="background-image: url('<?php echo $foto['url'] ?>')">
-							<a data-fancybox="gallery" href="<?php echo $foto['url']; ?>">
+						<div class="gallery-item" style="background-image: url('<?php echo $foto['sizes']['lightbox'] ?>')">
+							<a data-fancybox="gallery" href="<?php echo $foto['sizes']['lightbox']; ?>">
 								<i class="fa fa-expand" aria-hidden="true"></i>
-								<img src="<?php echo $foto['url'] ?>" alt="">
+								<img src="<?php echo $foto['sizes']['lightbox'] ?>" alt="">
 							</a>
 						</div>
 					<?php } 

@@ -32,10 +32,10 @@
 								<?php $fotos = get_field('galeria_de_fotos');	?>
 								<?php foreach($fotos as $foto) { ?>
 									<div class="sm-4-12 md-4-12">
-										<a data-fancybox="gallery" href="<?php echo $foto['url']; ?>">
-											<div class="gallery-item" style="background-image: url('<?php echo $foto['url']; ?>')">
+										<a data-fancybox="gallery" href="<?php echo $foto['sizes']['lightbox']; ?>">
+											<div class="gallery-item" style="background-image: url('<?php echo $foto['sizes']['lightbox']; ?>')">
 												<i class="fa fa-expand" aria-hidden="true"></i>
-												<img src="<?php echo $foto['url']; ?>">
+												<img src="<?php echo $foto['sizes']['lightbox']; ?>">
 											</div>
 										</a>
 									</div>

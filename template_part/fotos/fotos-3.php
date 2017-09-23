@@ -24,10 +24,10 @@
 					$merged = array_merge(... $fotos);
 					foreach (array_slice($merged, 0, 5) as $foto) { ?>
 					
-						<div class="gallery-item" style="background-image: url('<?php echo $foto['url'] ?>')">
-							<a data-fancybox="gallery" href="<?php echo $foto['url']; ?>">
+						<div class="gallery-item" style="background-image: url('<?php echo $foto['sizes']['lightbox'] ?>')">
+							<a data-fancybox="gallery" href="<?php echo $foto['sizes']['lightbox']; ?>">
 								<i class="fa fa-expand" aria-hidden="true"></i>
-								<img src="<?php echo $foto['url'] ?>" alt="<?php echo $foto['caption'] ?>">
+								<img src="<?php echo $foto['sizes']['lightbox'] ?>" alt="<?php echo $foto['caption'] ?>">
 							</a>
 						</div>
 					

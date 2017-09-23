@@ -20,13 +20,13 @@
 						<?php
 							if(has_post_thumbnail()) { ?>
 								<figure class="thumbnail-post">
-									<img src="<?php echo the_post_thumbnail_url(); ?>" alt="">
+									<img src="<?php echo the_post_thumbnail_url('lightbox'); ?>" alt="">
 								</figure>
 							<?php }
 						?>
 						<div class="describe_title">
 							<h2 class="single-title"><?php the_title(); ?></h2>
-							<ul class="social-shared">
+							<ul class="social-shared" style="margin-top: 0;">
 								<?php
 									$page_id = 61;
 									$noiva = get_field('nome_noiva', $page_id);
