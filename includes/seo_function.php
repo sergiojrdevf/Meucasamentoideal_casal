@@ -3,7 +3,7 @@
 add_action('wp_head', 'setMeta');
 function setMeta() {
 global $post; $postParent = get_post($post->ID);
-$page_id = get_page_by_path( 'Banner' )->ID;
+$page_id = 61;
 $img = get_field('background', $page_id);
 
 	?>

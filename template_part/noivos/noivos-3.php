@@ -1,5 +1,5 @@
 <?php
-	$page_id = get_page_by_path( 'Sobre o Casal' )->ID;
+	$page_id = 61;
 	$imgnoiva = get_field('imagem_noiva', $page_id);
 	$imgnoivo = get_field('imagem_noivo', $page_id);
 	$imgcasal = get_field('imagem_do_casal', $page_id);
@@ -7,8 +7,6 @@
 	$sobre_noivo = get_field('sobre_o_noivo', $page_id);
 	$historia = get_field('nossa_historia', $page_id);
 	$pedido = get_field('o_pedido', $page_id);
-
-	$page_id = get_page_by_path( 'Pagina Inicial' )->ID;
 	$noiva = get_field('nome_noiva', $page_id);
 	$noivo = get_field('nome_noivo', $page_id);
 	$img = get_field('background', $page_id);

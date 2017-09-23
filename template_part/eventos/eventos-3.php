@@ -1,4 +1,4 @@
-<?php $page_id = get_page_by_path( 'Pagina Inicial' )->ID; ?>
+<?php $page_id = 61 ?>
 <section class="hidde space-defult local mg-bottom">
 	<div class="containe  max-width-content ">
 		<h2 class="font-rochester part-title color-theme a-center mg-bottom">Eventos</h2>

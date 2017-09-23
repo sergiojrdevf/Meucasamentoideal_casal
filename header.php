@@ -28,7 +28,7 @@
 		<header class="default ">
  			<div class="container">
 				<?php
-					$page_id = get_page_by_path( 'Pagina Inicial' )->ID;
+					$page_id = 61;
 					$noiva = get_field('nome_noiva', $page_id);
 					$noivo = get_field('nome_noivo', $page_id);
 				?>

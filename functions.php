@@ -2,7 +2,7 @@
 
 // update_option('siteurl','http://localhost/default/');
 // update_option('home','http://localhost/default/');
-// $page_id = get_page_by_path( 'Pagina Inicial' )->ID;
+// $page_id = 61;
 // $field = get_field('eventos', $page_id);
 // foreach ($field as $event) {
 // 	if($event['titulo'] === 'Cerimônia') {
@@ -474,8 +474,8 @@ add_action('init', 'rsvpConfirm');
 function rsvpConfirm() {
 	if(isset($_REQUEST['rsvp_submit'])) {
 	
-	$rsvpId = get_page_by_path( 'RSVP' )->ID;
-	$rsvpList = get_field('convidados', $rsvpId);
+	// $rsvpId = get_page_by_path( 'RSVP' )->ID;
+	// $rsvpList = get_field('convidados', $rsvpId);
 	$name = $_REQUEST['rsvp_nome'];
 	$number = $_REQUEST['convidados'];
 	$confirmed = false;

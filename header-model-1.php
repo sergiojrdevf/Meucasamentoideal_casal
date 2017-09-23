@@ -26,7 +26,7 @@
 		</div>
 	</div>
 	<?php 
-		$page_id = get_page_by_path( 'Pagina Inicial' )->ID;
+		$page_id = 61;
 		$noiva = get_field('nome_noiva', $page_id);
 		$noivo = get_field('nome_noivo', $page_id);
 		$img = get_field('background', $page_id);
@@ -60,7 +60,7 @@
 				<h2 class="font-petit a-center lines names"><?php echo $noiva ?> <span class="break font-petit">&</span> <?php echo $noivo ?></h2>
 				<h3 class="font-petit date a-center">
 					<?php
-						$page_id = get_page_by_path( 'Pagina Inicial' )->ID;
+						$page_id = 61;
 						$field = get_field('eventos', $page_id);
 						foreach ($field as $event) {
 							if($event['titulo'] === 'Cerimônia') {

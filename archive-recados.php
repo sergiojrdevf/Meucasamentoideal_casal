@@ -39,7 +39,7 @@
 						if($_GET['success']) {
 							echo '<p class="alert alert-success a-center">';
 					
-								$page_id = get_page_by_path( 'Avisos' )->ID;
+								$page_id = 312;
 								$date_wedding = get_field('envio_de_recado', $page_id);
 								echo $date_wedding;
 					

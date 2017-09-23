@@ -21,7 +21,7 @@
     margin: 0 auto 15px auto;">
 			 	<p>
 					<?php
-						$page_id = get_page_by_path( 'Avisos' )->ID;
+						$page_id = 312;
 						$date_wedding = get_field('rsvp', $page_id);
 						echo $date_wedding;
 					?>

@@ -1,7 +1,7 @@
 
 <?php
 if(is_home()) {
-	$page_id = get_page_by_path( 'Pagina Inicial' )->ID;
+	$page_id = 61;
 	$field = get_field('eventos', $page_id);
 	foreach ($field as $event) {
 		if($event['titulo'] === 'Cerimônia') {
@@ -41,7 +41,7 @@ if(is_home()) {
 ?>
 
 <?php
-	$page_id = get_page_by_path( 'Pagina Inicial' )->ID;
+	$page_id = 61;
 	$google_maps = get_field('google_maps', $page_id);
 	if(is_home()) {
 ?>
