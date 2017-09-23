@@ -21,8 +21,10 @@
 					?>
 					<div class="describe_title">
 						<h2 style="font-weight: bold;"><?php the_title(); ?></h2>
-						<p>Agradecemos muito o seu carinho!</p>
-						<p>Por favor, confirme os presente e valores antes de fechar a compra.</p>	
+						<?php if(WC()->cart->get_cart_contents_count() > 0) { ?>
+							<p>Agradecemos muito o seu carinho!</p>
+							<p>Você pode confirmar os presentes e fechar sua compra ou <a class="btn" href="<?php echo home_url('/loja') ?>">continuar comprando.</a></p>
+						<?php } ?>
 					</div>
 					<article>
 						<?php the_content(); ?>

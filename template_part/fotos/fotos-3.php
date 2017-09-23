@@ -5,7 +5,7 @@
 	);
 	
 	$query = new WP_Query($args);
-	if($query) { ?>
+	if($query->have_posts()) { ?>
 	<div class="space-default">
 		<div class="container">
 			<h2 class="font-rochester part-title color-theme a-center">Nossas Fotos</h2>

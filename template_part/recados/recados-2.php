@@ -5,7 +5,7 @@
 	);
 	
 	$query = new WP_Query($args);
-	if($query->posts) { ?>
+	if($query->have_posts()) { ?>
 		<section class="hidde space-default notes overlay box ">
 			<div class="container ">
 				<h2 class="font-rochester part-title color-theme a-center color-white">Mural de Recados</h2>

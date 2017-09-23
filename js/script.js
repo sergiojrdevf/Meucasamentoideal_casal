@@ -25,6 +25,25 @@ $(document).ready(function(){
 		$('.modal').addClass('active');
 		e.preventDefault();
 	});
+
+	$(".slidertestimonial").owlCarousel({		
+		autoHeight: true,		
+		responsive : {		
+			0 : {		
+				items:1,		
+			},		 
+			768 : {		
+				items:2, 		
+			}		
+		},		
+		loop:true,		
+		nav: false,		
+		autoplay:true,		
+		autoplayTimeout:3000,		
+		autoplayHoverPause:false	
+	 });
+
+	 $('a.add_to_cart_button').click(function(){jQuery(this).append('<img src="http://smallenvelop.com/wp-content/uploads/2014/08/Preloader_3.gif" width="20px" height="20px"/>')});
 });
 
 

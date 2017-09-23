@@ -56,7 +56,7 @@ if(is_home()) {
 						<div class="footer-item">
 							<h2>Contribua Conosco</h2>
 							<p>Você pode fazer uma doação para nossa lua de mel dos sonhos ou comprando da nossa lista de presente virtual.</p>
-							<a href="#">Ver lista de presentes</a>
+							<a href="<?php echo home_url('/loja') ?>">Ver lista de presentes</a>
 						</div>
 					</div>
 
@@ -68,8 +68,8 @@ if(is_home()) {
 									<div class="local-contet">
 										<h3><?php echo get_sub_field('titulo'); ?></h3>
 										<?php $data = get_sub_field('data');?>
-										<p class="local-featured open-sans">Local: <?php echo utf8_encode(strftime('%d de %B de %Y', strtotime($data))); ?></p>
-										<p class="local-featured open-sans">Data: <?php echo  get_sub_field('local'); ?></p>
+										<p class="local-featured open-sans">Data: <?php echo utf8_encode(strftime('%d de %B de %Y', strtotime($data))); ?></p>
+										<p class="local-featured open-sans">Local: <?php echo  get_sub_field('local'); ?></p>
 									</div>
 								</div>
 							<?php endwhile;	?>

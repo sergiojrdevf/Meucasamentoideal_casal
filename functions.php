@@ -132,12 +132,12 @@ $styles = [
 	],
 ];
 
-	if(!is_home()) {
-		unset($scripts['GoogleMaps']);
-		unset($scripts['owlCarousel']);
-		unset($styles['OwlCarouselCss']);
-		unset($styles['OwlCarouselTheme']);
-	}
+	// if(!is_home()) {
+	// 	unset($scripts['GoogleMaps']);
+	// 	unset($scripts['owlCarousel']);
+	// 	unset($styles['OwlCarouselCss']);
+	// 	unset($styles['OwlCarouselTheme']);
+	// } 
 
 	if($scripts) {	
 		foreach($scripts as $key => $script) {
@@ -164,6 +164,20 @@ function configHead() {
 	}
 }
 
+add_filter( 'wc_add_to_cart_message_html', '__return_null' );
+
+// Limite post
+function hwl_home_pagesize( $query ) {
+    if ( is_admin() || ! $query->is_main_query() )
+        return;
+
+    if ( is_post_type_archive( 'recados' ) ) {
+        // Display 50 posts for a custom post type called 'movie'
+        $query->set( 'posts_per_page', 10 );
+        return;
+    }
+}
+add_action( 'pre_get_posts', 'hwl_home_pagesize', 1 );
 
 // Add Menu
 add_action( 'after_setup_theme', 'registerMenu' );

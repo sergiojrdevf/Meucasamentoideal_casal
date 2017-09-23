@@ -5,7 +5,7 @@
 	);
 	
 	$query = new WP_Query($args);
-	if($query) { ?>
+	if($query->have_posts()) { ?>
 	<div class="space-default">
 		<div class="container">
 			<h2 class="font-rochester part-title color-theme a-center">Nossas Fotos</h2>
@@ -19,10 +19,10 @@
 					foreach (array_slice($merged, 0, 6) as $foto) { ?>
 						<?php  ?>
 						<div class="sm-6-12 md-4-12">
-							<a data-fancybox="gallery" href="<?php echo $foto['sizes']['lightbox']; ?>">
-								<div class="gallery-item" style="background-image: url('<?php echo $foto['sizes']['small']; ?>')">
+							<a data-fancybox="gallery" href="<?php echo $foto['url']; ?>">
+								<div class="gallery-item" style="background-image: url('<?php echo $foto['url']; ?>')">
 									<i class="fa fa-expand" aria-hidden="true"></i>
-									<img src="<?php echo $foto['sizes']['lightbox'] ?>" alt="<?php echo $foto['caption'] ?>">
+									<img src="<?php echo $foto['url']; ?>" alt="<?php echo $foto['caption'] ?>">
 								</div>
 							</a>
 						</div>

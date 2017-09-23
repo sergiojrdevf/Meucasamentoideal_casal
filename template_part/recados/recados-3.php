@@ -1,11 +1,12 @@
 <?php
 	$args = array(
 		'posts_per_page' => 4,
-		'post_type' => 'recados'
+		'post_type' => 'recados',
+		'post_status' => 'publish'
 	);
 	
 	$query = new WP_Query($args);
-	if($query->posts) { ?>
+	if($query->have_posts()) { ?>
 		<section class="hidde notes bordered-bottom">
 			<div class="container ">
 				<h2 class="font-rochester part-title color-theme a-center">Mural de Recados</h2>

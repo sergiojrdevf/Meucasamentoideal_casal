@@ -9,6 +9,14 @@
 					<li><a style="color: #333;" href="<?php echo home_url('/loja'); ?>"><i class="fa fa-angle-right" aria-hidden="true"></i> Lista de Presentes</a></li>
 				</ul>
 			</div>
+			<?php
+				if($_GET['add-to-cart']) {
+					echo '<p class="alert alert-success a-center">';
+					echo get_the_title($_GET['add-to-cart']).' Adicionado ao carrinho com sucesso :) ';
+					echo '<a href="'.home_url('/carrinho').'" class="btn btn-theme btn-small">Ver Carrinho</a>';
+					echo '</p>';
+				}
+			?>
 			<h2 class="font-rochester part-title color-theme">Nossa lista de presentes</h2>
 			<div class="column">
 				<div class="sm-3-12 mg-bottom">
@@ -38,7 +46,7 @@
 										</div>
 										<h2 class="product-name"><?php the_title(); ?></h2>
 										<p>R$<?php echo get_post_meta( get_the_ID(), '_regular_price', true); ?></p>
-										<a rel="nofollow" href="<?php echo home_url('/loja') ?>?add-to-cart=<?php echo get_the_ID(); ?>" data-quantity="1" data-product_id="<?php echo get_the_ID(); ?>" data-product_sku="" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Comprar</a>
+										<a rel="nofollow" href="<?php echo home_url('/loja') ?>?add-to-cart=<?php echo get_the_ID(); ?>&quantity=1" data-quantity="1" data-product_id="<?php echo get_the_ID(); ?>" data-product_sku="" class="button product_type_simple add_to_cart_button">Comprar</a>
 									</div>
 								</div>
 							<?php }

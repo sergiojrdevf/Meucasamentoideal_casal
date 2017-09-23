@@ -5,7 +5,7 @@
 	);
 	
 	$query = new WP_Query($args);
-	if($query->posts) { ?>
+	if($query->have_posts()) { ?>
 		<section class="space-default testimonial">
 			<div class="container ">
 				<h2 class="font-rochester part-title color-theme a-center">Mural de Recados</h2>
